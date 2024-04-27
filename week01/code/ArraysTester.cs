@@ -39,7 +39,17 @@ public static class ArraysTester {
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return new double[0]; // replace this return statement with your own
+        double[] multiples = new double[length];
+
+        // Loop
+        for (int i = 0; i < length; i++)
+        {
+            // current multiple and store it in the array
+            multiples[i] = number * (i + 1);
+        }
+
+        // Return the array
+        return multiples;
     }
     
     /// <summary>
@@ -56,6 +66,23 @@ public static class ArraysTester {
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+        
+        // check for items in it
+        if (data.Count == 0 || amount <= 0 || amount >= data.Count)
+        {
+            return; // No rotation needed
+        }
 
-    }
+        // Use modulo operation to handle cases where the amount is big
+        amount %= data.Count;
+
+        // Createlist to store rotated elements
+        List<int> rotatedElements = data.GetRange(data.Count - amount, amount);
+
+        // Remove rotated elements from end
+        data.RemoveRange(data.Count - amount, amount);
+
+        // Insert elements to beginning
+        data.InsertRange(0, rotatedElements);
+    }    
 }
