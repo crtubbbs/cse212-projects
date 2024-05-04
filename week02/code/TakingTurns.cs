@@ -1,4 +1,4 @@
-﻿public static class TakingTurns {
+﻿﻿public static class TakingTurns {
     public static void Test() {
         // TODO Problem 1 - Run test cases and fix the code to match requirements
         // Test Cases
@@ -15,8 +15,8 @@
         // Console.WriteLine(players);    // This can be un-commented out for debug help
         while (players.Length > 0)
             players.GetNextPerson();
-        // Defect(s) Found: 
-
+        // Defect(s) Found: The queue implementation doesn't correctly handle the case where a person's turns become 0, they should still be re-added to the queue.
+        // The condition if (person.Turns > 1) should be changed to if (person.Turns >= 1) to handle the case where a person has infinite turns (turns <= 0).
         Console.WriteLine("---------");
 
         // Test 2
@@ -38,7 +38,7 @@
         while (players.Length > 0)
             players.GetNextPerson();
 
-        // Defect(s) Found: 
+        // Defect(s) Found: Similar to Test 1, the condition if (person.Turns > 1) should be changed to if (person.Turns >= 1).
 
         Console.WriteLine("---------");
 

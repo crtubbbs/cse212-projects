@@ -15,6 +15,7 @@ public class CustomerService {
         // Expected Result: 
         Console.WriteLine("Test 1");
 
+        CustomerService cs2 = new CustomerService(0);
         // Defect(s) Found: 
 
         Console.WriteLine("=================");
@@ -24,6 +25,8 @@ public class CustomerService {
         // Expected Result: 
         Console.WriteLine("Test 2");
 
+        cs2.AddNewCustomer();
+        cs2.AddNewCustomer();
         // Defect(s) Found: 
 
         Console.WriteLine("=================");
