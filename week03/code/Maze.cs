@@ -28,34 +28,54 @@ public class Maze {
     /// Check to see if you can move left.  If you can, then move.  If you
     /// can't move, then display "Can't go that way!"
     /// </summary>
-    public void MoveLeft() {
-        // FILL IN CODE
+public void MoveLeft()
+{
+    if (_mazeMap.ContainsKey((_currX, _currY)) && _mazeMap[(_currX, _currY)][0])
+    {
+        _currY--; 
+        Console.WriteLine("Moved left.");
     }
-
-    /// <summary>
-    /// Check to see if you can move right.  If you can, then move.  If you
-    /// can't move, then display "Can't go that way!"
-    /// </summary>
-    public void MoveRight() {
-        // FILL IN CODE
+    else
+    {
+        Console.WriteLine("No");
     }
-
-    /// <summary>
-    /// Check to see if you can move up.  If you can, then move.  If you
-    /// can't move, then display "Can't go that way!"
-    /// </summary>
-    public void MoveUp() {
-        // FILL IN CODE
+}
+public void MoveRight()
+{
+    if (_mazeMap.ContainsKey((_currX, _currY)) && _mazeMap[(_currX, _currY)][1])
+    {
+        _currY++; 
+        Console.WriteLine("Moved right.");
     }
-
-    /// <summary>
-    /// Check to see if you can move down.  If you can, then move.  If you
-    /// can't move, then display "Can't go that way!"
-    /// </summary>
-    public void MoveDown() {
-        // FILL IN CODE
+    else
+    {
+        Console.WriteLine("No");
     }
-
+}
+public void MoveUp()
+{
+    if (_mazeMap.ContainsKey((_currX, _currY)) && _mazeMap[(_currX, _currY)][2])
+    {
+        _currX--; 
+        Console.WriteLine("Moved up.");
+    }
+    else
+    {
+        Console.WriteLine("No");
+    }
+}
+public void MoveDown()
+{
+    if (_mazeMap.ContainsKey((_currX, _currY)) && _mazeMap[(_currX, _currY)][3])
+    {
+        _currX++; 
+        Console.WriteLine("Moved down.");
+    }
+    else
+    {
+        Console.WriteLine("No");
+    }
+}
     public void ShowStatus() {
         Console.WriteLine($"Current location (x={_currX}, y={_currY})");
     }
