@@ -78,7 +78,7 @@ public static class SetsAndMapsTester {
         // Problem 5: Earthquake
         // Sample Test Cases (may not be comprehensive) 
         Console.WriteLine("\n=========== Earthquake TESTS ===========");
-        EarthquakeDailySummary();
+
 
         // Sample output from the function.  Number of earthquakes, places, and magnitudes will vary.
         // 1km NE of Pahala, Hawaii - Mag 2.36
@@ -286,7 +286,7 @@ private static bool IsAnagram(string word1, string word2)
         var json = await reader.ReadToEndAsync();
         var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
         var featureCollection = JsonSerializer.Deserialize<FeatureCollection>(json, options);
-        
+
         int count = 1;
         foreach (var feature in featureCollection.Features)
         {
